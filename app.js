@@ -6,15 +6,6 @@ new Vue({
         y: 0 
     },
     methods: {
-        greet: function (timeOfDay) {
-            return 'Good ' + timeOfDay + ' ' + this.name;
-        },
-        add: function () {
-        this.age++;
-    },
-        subtract: function () {
-            this.age--;
-        }, */
         add: function (inc) {
             this.age += inc;
         },
@@ -25,6 +16,11 @@ new Vue({
             console.log(event);
             this.x = event.offsetX;
             this.y = event.offsetY;
+        },
+
+        // Not working
+        click: function () {
+            alert('You clicked me');
         }
     }
 });
