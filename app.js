@@ -9,12 +9,12 @@ new Vue({
         greet: function (timeOfDay) {
             return 'Good ' + timeOfDay + ' ' + this.name;
         },
-        add: function () {
+        /*add: function () {
         this.age++;
-    },
+        },
         subtract: function () {
             this.age--;
-        }, */
+        },*/
         add: function (inc) {
             this.age += inc;
         },
