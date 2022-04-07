@@ -19,15 +19,13 @@
         <button @click="subtract(10)">Subtract 10 year</button>
         <button v-on:dblclick="add(1)">Adds year</button>
         <button v-on:dblclick="subtract(1)">Subtract year</button>
+
+        <a v-on:click.prevent="alert" href="https://m.bing.com">Find on web</a>
+
         <p>My age is {{ age }}</p>
         
         <div id="canvas" v-on:mousemove="updateXY"> {{x}} | {{y}} </div>
         </div>
-
-        <!-- Not working -->
-        <a @click.prevent="click" href="https://m.bing.com">Find on web</a>
-       
-        
     </div>
 
     <script src="app.js"></script>
