@@ -12,20 +12,8 @@
 
     <div id="vue-app">
 
-        <h2>Events</h2>
-        <!-- <button v-on:click="add">Adds year</button>
-                <button v-on:click="subtract">Subtract year</button> -->
-        <button v-on:click.once="add(10)">Adds 10 year</button>
-        <button @click="subtract(10)">Subtract 10 year</button>
-        <button v-on:dblclick="add(1)">Adds year</button>
-        <button v-on:dblclick="subtract(1)">Subtract year</button>
-        <p>My age is {{ age }}</p>
-        
-        <div id="canvas" v-on:mousemove="updateXY"> {{x}} | {{y}} </div>
-        </div>
-
-        <!-- Not working -->
-        <a @click.prevent="click" href="https://m.bing.com">Find on web</a>
+        <!-- `greet` is the name of a method defined below -->
+        <button v-on:click="alert">Alert</button>
        
         
     </div>
