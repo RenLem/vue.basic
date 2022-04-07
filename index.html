@@ -12,11 +12,13 @@
 
     <div id="vue-app">
 
-        <h1>Keyboard Events</h1>
+        <h1>Two-way data bind</h1>
         <label>Name:</label>
-        <input type="text" v-on:keyup.enter="logName" />
+        <input type="text" v-model="name" />
+        <p> {{ name }}</p>
         <label>Age:</label>
-        <input type="text" v-on:keyup.alt.enter="logAge" />
+        <input type="text" v-model="age" />
+        <p>{{ age }}</p>
         
     </div>
 
