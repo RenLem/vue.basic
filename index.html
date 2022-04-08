@@ -11,16 +11,42 @@
 <body>
 
     <div id="vue-app">
-        <h1>Conditions</h1>
-        <button v-on:click="success=!success">Toggle success</button>
-        <button v-on:click="error=!error">Toggle error</button>
-        
-        <!-- <p v-if="success">Whoooo, success!</p>
-        <p v-else-if="error">There must be en error</p> -->
+        <h1>Looping throught list</h1>
+        <p>Example 1</p>
 
-        <p v-show="success">Whoooo, success!</p>
-        <p v-show="error">There must be en error</p>
-        
+        <ul>
+            <li v-for="character in characters"> {{ character }}</li>
+        </ul>
+
+        <p>Example 2</p>
+        <ul>
+            <li v-for="druid in druids">{{ druid.name }} - {{ druid.age }}</li>
+        </ul>
+
+        <p>Example 3</p>
+        <ul>
+            <li v-for="(druid, index) in druids">{{ index }} | {{ druid.name }} - {{ druid.age }}</li>
+        </ul>
+
+        <p>Example 4</p>
+        <div v-for="(druid, index) in druids">
+            <h5>{{ index }} | {{ druid.name }}</h5>
+            <p>{{ druid.age }}</p>
+        </div>
+
+        <p>Example 5</p>
+        <template v-for="(druid, index) in druids">
+            <h5>{{ index }} | {{ druid.name }}</h5>
+            <p>{{ druid.age }}</p>
+        </template>
+
+        <p>Example 6</p>
+        <template v-for="druid in druids">
+            <div v-for="(key,val) in druid">
+                <p>{{ key }} - {{ val }}</p>
+            </div>
+        </template>
+
         
     </div>
 
