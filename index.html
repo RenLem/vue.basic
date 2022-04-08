@@ -11,19 +11,15 @@
 <body>
 
     <div id="vue-app">
+        <h1>Conditions</h1>
+        <button v-on:click="success=!success">Toggle success</button>
+        <button v-on:click="error=!error">Toggle error</button>
+        
+        <!-- <p v-if="success">Whoooo, success!</p>
+        <p v-else-if="error">There must be en error</p> -->
 
-        <h1>Dynamic CSS classes</h1>
-
-        <h3>Example one</h3>
-        <!--<div v-on:click="available=!available" v-bind:class="{available: available}">
-            <span>O dry</span>
-        </div>-->
-        <h3>Example two</h3>
-        <button v-on:click="nearby=!nearby"> Toggle nearby</button>
-        <button v-on:click="available=!available">Toggle available</button>
-        <div v-bind:class="compClasses">
-            <span>O da</span>
-        </div>
+        <p v-show="success">Whoooo, success!</p>
+        <p v-show="error">There must be en error</p>
         
         
     </div>
