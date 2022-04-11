@@ -1,30 +1,22 @@
-// This will change every component becouse its outside of vue app
-var data = {
-    name: 'Outside'
-}
-
-Vue.component('dude', {
-    template: '<p>Kawabanga, I am {{ name }}. <button v-on:click="changeName">Change name</button> </p>!',
-    data: function () {
-        // Returning data from outside
-        /*return data*/
-        // Inside data
-         return{
-            name: 'Bumblebee'
-        } 
+new Vue({
+    el: '#vue-app',
+    data: {
+        output: '(Your favorite food)'
     },
-    methods:{
-        changeName: function () {
-            // Changing data from  or insaide
-            this.name = '--Yoshi--'
+    methods: {
+        readRefs: function () {
+            // All refs
+            console.log(this.$refs);
+
+            /*Specified refs*/
+            
+            // Ref one
+            console.log(this.$refs.toInput.value);
+            this.output = this.$refs.toInput.value
+
+            // Ref two in console log only
+            console.log(this.$refs.oo.scrollWidth);
+
         }
     }
-})
-
-new Vue({
-    el: '#vue-app-one',
-});
-
-new Vue({
-    el: '#vue-app-two',
 });
