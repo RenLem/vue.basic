@@ -12,20 +12,21 @@
 
     <div id="vue-app">
 
-        <h1>Dynamic CSS classes</h1>
+        <h1>Simple punchbag game</h1>
 
-        <h3>Example one</h3>
-        <!--<div v-on:click="available=!available" v-bind:class="{available: available}">
-            <span>O dry</span>
-        </div>-->
-        <h3>Example two</h3>
-        <button v-on:click="nearby=!nearby"> Toggle nearby</button>
-        <button v-on:click="available=!available">Toggle available</button>
-        <div v-bind:class="compClasses">
-            <span>O da</span>
+        <!-- bag image -->
+        <div id="bag" v-bind:class="{ burst: ended}"></div>
+
+        <!-- bag health -->
+        <div id="bag-health">
+            <div v-bind:style="{ width: health + '%'}"></div>
         </div>
-        
-        
+
+        <!-- game controls -->
+        <div id="controls">
+            <button v-on:click="punch" v-show="!ended">Punch</button>
+            <button v-on:click="restart">Restart</button>
+        </div>
     </div>
 
     <script src="app.js"></script>
