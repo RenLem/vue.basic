@@ -1,34 +1,30 @@
-var one = new Vue({
+// This will change every component becouse its outside of vue app
+var data = {
+    name: 'Outside'
+}
+
+Vue.component('dude', {
+    template: '<p>Kawabanga, I am {{ name }}. <button v-on:click="changeName">Change name</button> </p>!',
+    data: function () {
+        // Returning data from outside
+        /*return data*/
+        // Inside data
+         return{
+            name: 'Bumblebee'
+        } 
+    },
+    methods:{
+        changeName: function () {
+            // Changing data from  or insaide
+            this.name = '--Yoshi--'
+        }
+    }
+})
+
+new Vue({
     el: '#vue-app-one',
-    data: {
-        title: 'Vue app one'
-    },
-    methods: {
-        
-    },
-    computed: {
-        greet: function () {
-            return 'Hello from One ;O)'
-        }
-    }
 });
 
-var two = new Vue({
+new Vue({
     el: '#vue-app-two',
-    data: {
-        title: 'Vue app two'
-    },
-    methods: {
-        changeTitle: function () {
-            one.title = 'Function in app two has executed and changed this!'
-        }
-
-    },
-    computed: {
-        greet: function () {
-            return 'Hey dude, wecome &:)'
-        }
-    }
 });
-
-two.title = 'Changed from outside! :)'
