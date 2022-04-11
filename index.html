@@ -10,23 +10,17 @@
 </head>
 <body>
 
-    <div id="vue-app">
+    <h1>Multiple Vue instances</h1>
 
-        <h1>Simple punchbag game</h1>
+    <div id="vue-app-one">
+        <h3>{{ title }}</h3>
+        <p>{{ greet }}</p>
+    </div>
 
-        <!-- bag image -->
-        <div id="bag" v-bind:class="{ burst: ended}"></div>
-
-        <!-- bag health -->
-        <div id="bag-health">
-            <div v-bind:style="{ width: health + '%'}"></div>
-        </div>
-
-        <!-- game controls -->
-        <div id="controls">
-            <button v-on:click="punch" v-show="!ended">Punch</button>
-            <button v-on:click="restart">Restart</button>
-        </div>
+    <div id="vue-app-two">
+        <h3>{{ title }}</h3>
+        <p>{{ greet }}</p>
+        <button v-on:click="changeTitle">Change app one title</button>
     </div>
 
     <script src="app.js"></script>
