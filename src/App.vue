@@ -1,7 +1,10 @@
 <template>
     <div>
         <app-header></app-header>
-        <app-body></app-body>
+        <!-- Only for exercise -->
+        <!-- <p v:bind:dataPass="dataPass">{{ QdataPass }}</p> -->
+
+        <app-body v-bind:bodyDataPass="QdataPass"></app-body>
         <app-footer></app-footer>
     </div>
 </template>
@@ -19,6 +22,14 @@ export default {
     },
     data () {
         return {
+            QdataPass: [
+                {name: 'Sony', speciality: 'Vue Components', show: false},
+                {name: 'Samsung', speciality: 'HTML Wizardry', show: false},
+                {name: 'Hitachi', speciality: 'Click Events', show: false},
+                {name: 'Ericsson', speciality: 'Conditionals', show: false},
+                {name: 'Toshiba', speciality: 'Webpack', show: false},
+                {name: 'Yoshi', speciality: 'Data Diggin', show: false}
+            ]
         
         }
     }

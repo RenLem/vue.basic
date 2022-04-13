@@ -1,7 +1,7 @@
 <template>
 <div id="brands">
     <ul>
-        <li v-for="brand in brands" v-on:click="brand.show = !brand.show">
+        <li v-for="brand in bodyDataPass" v-on:click="brand.show = !brand.show">
             <h2>{{ brand.name }}</h2>
             <h3 v-show="brand.show">{{ brand.speciality }}</h3>
         </li>
@@ -11,16 +11,15 @@
 
 <script>
 export default {
+    props: {
+        bodyDataPass: {
+            type: Array,
+            reqired: true
+        }
+    },
     data() {
         return {
-            brands: [
-                {name: 'Sony', speciality: 'Vue Components', show: false},
-                {name: 'Samsung', speciality: 'HTML Wizardry', show: false},
-                {name: 'Hitachi', speciality: 'Click Events', show: false},
-                {name: 'Ericsson', speciality: 'Conditionals', show: false},
-                {name: 'Toshiba', speciality: 'Webpack', show: false},
-                {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-            ]
+            
             
         }
 
