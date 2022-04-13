@@ -15,3 +15,10 @@ export default ({
     }
 })
 </script>
+
+<style scoped>
+h1{
+    /* Not active becouse it has to be in this component*/
+    color: yellowgreen;
+}
+</style>

@@ -1,18 +1,26 @@
 <template>
+<div>
+    <h1>{{ titleYogas }}</h1>
     <ul>
         <li v-for="yoga in yogas">{{ yoga }}</li>
     </ul>
+</div>
+    
 </template>
 
 <script>
 export default {
     data () {
         return {
-          yogas: ['Tantric', 'Meditation', 'Outdors']
+            titleYogas: 'Yoga Component',
+            yogas: ['Tantric', 'Meditation', 'Outdors']
         }
     }
 }
 </script>
 
-<style>
+<style scoped>
+h1{
+    color: darkturquoise;
+}
 </style>

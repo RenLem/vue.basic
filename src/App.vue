@@ -1,11 +1,12 @@
 <template>
     <div>
-        <h1>{{ titleNinjas }}</h1>
+        
         <ninjas></ninjas>
 
-        <h1>{{ titleYogas }}</h1>
+        
         <yogas></yogas>
 
+        <!-- Not active becouse it has to be in component -->
         <h1>{{ titleTogas }}</h1>
         <togas></togas>
     </div>
@@ -23,8 +24,7 @@ export default {
     },
     data () {
         return {
-          titleNinjas: 'Ninja Component',
-          titleYogas: 'Yoga Component',
+        // Not active becouse it has to be in component
           titleTogas: 'Toga Component',
         }
     }
@@ -32,4 +32,8 @@ export default {
 </script>
 
 <style>
+h1{
+    /* Global not scoped */
+    color: slateblue;
+}
 </style>
