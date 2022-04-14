@@ -1,14 +1,24 @@
 <template>
   <header>
-      <h1>{{ title }}</h1>
+      <h1 v-on:click="updateTitle">{{ title }}</h1>
   </header>
 </template>
 
 <script>
 export default {
+    props: {
+        title: {
+            type: String
+        }
+    },
     data() {
         return {
             title: 'Header component'
+        }
+    },
+    methods: {
+        updateTitle: function () {
+            this.title = ':0) updated primitive type'
         }
     }
 

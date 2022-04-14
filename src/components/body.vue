@@ -6,6 +6,8 @@
             <h3 v-show="brand.show">{{ brand.speciality }}</h3>
         </li>
     </ul>
+    <h3 v-for="localBody in propsBodyApp">{{ localBody }}</h3>
+    <button v-on:click="deleteBrand">Delete brand</button>
 </div>
 </template>
 
@@ -15,14 +17,20 @@ export default {
         bodyDataPass: {
             type: Array,
             reqired: true
+        },
+        propsBodyApp:{
+            type: Array,
+            reqired: true
         }
     },
     data() {
         return {
-            
-            
         }
-
+    },
+    methods: {
+        deleteBrand: function () {
+            this.bodyDataPass.pop();
+        }
     }
 
 }

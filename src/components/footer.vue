@@ -1,14 +1,24 @@
 <template>
 <footer>
-    <p>{{ copyright }}</p>
+    <p>{{ copyright }} {{ title }}</p>
+    <p v-for="localFooter in propsFooterApp">{{ localFooter }}</p>
 </footer>
 </template>
 
 <script>
 export default {
+    props: {
+        propsFooterApp:{
+            type: Array,
+            reqired: true
+        },
+        title: {
+           type: String 
+        }
+    },
     data() {
         return {
-            copyright: 'Copyright 2022 Vue 2 for everybody.'
+            copyright: '© Copyright 2022 Vue 2 for everybody.'
         }
     }
 
