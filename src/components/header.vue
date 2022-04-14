@@ -1,6 +1,6 @@
 <template>
   <header>
-      <h1 v-on:click="updateTitle">{{ title }}</h1>
+      <h1 v-on:click="updateTitleHeader">{{ title }}</h1>
   </header>
 </template>
 
@@ -17,8 +17,8 @@ export default {
         }
     },
     methods: {
-        updateTitle: function () {
-            this.title = ':0) updated primitive type'
+        updateTitleHeader: function () {
+            this.$emit('updateTitleHeader', 'Vue wizards - updated by emiting header component')
         }
     }
 

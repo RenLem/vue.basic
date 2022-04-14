@@ -1,6 +1,8 @@
 <template>
     <div>
-        <app-header v-bind:title="title"></app-header>
+        <app-header 
+        v-bind:title="title"
+        v-on:updateTitleHeader="updateTitle($event)"></app-header>
         <!-- Only for exercise -->
         <!-- <p v:bind:dataPass="dataPass">{{ QdataPass }}</p> -->
 
@@ -38,6 +40,11 @@ export default {
             title: 'Primitive type (vs.Reference type)',
             dataBody: ['Pass data to Body and Footer', 'Display data throught components from App']
 
+        }
+    },
+    methods: {
+        updateTitle: function (updateTitle) {
+            this.title = updateTitle;
         }
     }
 }
