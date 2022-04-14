@@ -35,7 +35,7 @@ export default {
                 {name: 'Yoshi', speciality: 'Data Diggin', show: false}
             ],
 
-            title: 'Primitive type (vs. Reference type)',
+            title: 'Primitive type (vs.Reference type)',
             dataBody: ['Pass data to Body and Footer', 'Display data throught components from App']
 
         }
