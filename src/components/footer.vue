@@ -6,6 +6,10 @@
 </template>
 
 <script>
+
+// Imported BUS for transfering data
+import { bus } from '../main'
+
 export default {
     props: {
         propsFooterApp:{
@@ -20,6 +24,11 @@ export default {
         return {
             copyright: '© Copyright 2022 Vue 2 for everybody.'
         }
+    },
+    created() {
+        bus.$on('titleUpdated', (data) => {
+            this.title = data;
+        })
     }
 
 }
