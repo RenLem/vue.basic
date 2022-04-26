@@ -1,55 +1,40 @@
 <template>
-    <div>
-        <app-header 
-        v-bind:title="title"
-        v-on:updateTitleHeader="updateTitle($event)"></app-header>
-        <!-- Only for exercise -->
-        <!-- <p v:bind:dataPass="dataPass">{{ QdataPass }}</p> -->
+  <div>
+    <!-- <form-helper>
+           <h2 slot="title">I'm slot title {{ title }}</h2>
+           <h3 slot="paragraf">This is slot paragraf</h3>
+       </form-helper> -->
 
-        <app-body v-bind:bodyDataPass="QdataPass" v-bind:propsBodyApp="dataBody"></app-body>
-
-        <!-- Second body button will delete data from first body becouse bouth button are deleting data in source array -->
-        <!-- <app-body v-bind:bodyDataPass="QdataPass"></app-body> -->
-
-        <app-footer v-bind:title="title" v-bind:propsFooterApp="dataBody"></app-footer>
-    </div>
+    <form-helper>
+      <div slot="form-header">
+        <h3>Title of the Form</h3>
+        <p>About the form</p>
+      </div>
+      <div slot="form-fields">
+        <input type="text" placeholder="name" required />
+        <input type="password" placeholder="password" required />
+      </div>
+      <div slot="form-controls">
+        <button v-on:click="handleSubmit">Submit</button>
+      </div>
+    </form-helper>
+  </div>
 </template>
 
 <script>
-import Header from './components/header.vue'
-import Body from './components/body.vue'
-import Footer from './components/footer.vue'
+import formHelper from "./components/formHelper.vue";
 
 export default {
-    components: {
-        'app-header': Header,
-        'app-body': Body,
-        'app-footer': Footer
-    },
-    data () {
-        return {
-            QdataPass: [
-                {name: 'Sony', speciality: 'Vue Components', show: false},
-                {name: 'Samsung', speciality: 'HTML Wizardry', show: false},
-                {name: 'Hitachi', speciality: 'Click Events', show: false},
-                {name: 'Ericsson', speciality: 'Conditionals', show: false},
-                {name: 'Toshiba', speciality: 'Webpack', show: false},
-                {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-            ],
-
-            title: 'Primitive type (vs.Reference type)',
-            dataBody: ['Pass data to Body and Footer', 'Display data throught components from App']
-
-        }
-    },
-    methods: {
-        updateTitle: function (updateTitle) {
-            this.title = updateTitle;
-        }
-    }
-}
+  components: {
+    "form-helper": formHelper,
+  },
+  data() {
+    return {
+      title: "--| Dynamic slot title |--",
+    };
+  },
+  methods: {},
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
