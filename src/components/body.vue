@@ -31,6 +31,40 @@ export default {
         deleteBrand: function () {
             this.bodyDataPass.pop();
         }
+    },
+
+    // Life cycle hooks
+    beforeCreate() {
+        alert('beforeCreate')
+    },
+    created() {
+        alert('created')
+    },
+    beforeMount() {
+        alert('beforeMount')
+    },
+    mounted() {
+        alert('mounted')
+    },
+    beforeUpdate() {
+        alert('beforeUpdate')
+    },
+    updated() {
+        alert('updated')
+    },
+
+    // Thise below does not show
+    beforeDelete() {
+        alert('beforeDelete')
+    },
+    deleted() {
+        alert('deleted')
+    },
+    beforeDestroy() {
+        alert('beforeDestroy')
+    },
+    destroyed() {
+        alert('destroyed')
     }
 
 }
