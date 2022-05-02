@@ -1,5 +1,6 @@
 <template>
 <div id="brands">
+    
     <ul>
         <li v-for="brand in bodyDataPass" v-on:click="brand.show = !brand.show">
             <h2>{{ brand.name }}</h2>
@@ -8,6 +9,7 @@
     </ul>
     <h3 v-for="localBody in propsBodyApp">{{ localBody }}</h3>
     <button v-on:click="deleteBrand">Delete brand</button>
+
 </div>
 </template>
 
