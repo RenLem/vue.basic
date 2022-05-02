@@ -68,7 +68,6 @@ export default {
     destroyed() {
         alert('destroyed')
     }
-
 }
 </script>
 
